@@ -12,7 +12,7 @@ Only integers greater than or equal to zero will be supplied to the function.
 */
 
 //declare the function and set the name with its parameter
-const factorialize = num =>  {
+function factorialize (num){
   let fact = num;
 
  //use an if statement to select cases in which the number is zero where factor is 1
