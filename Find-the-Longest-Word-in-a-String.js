@@ -4,6 +4,8 @@ Return the length of the longest word in the provided sentence.
 
 Your response should be a number. */
 
+//METHOD 1
+
 const findLongestWordLength = (str) => {
   //split the string and turn into an array
   let words = str.split(' ');
@@ -19,6 +21,24 @@ const findLongestWordLength = (str) => {
     }
   return longest;
 }
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+// METHOD 2
+
+function findLongestWordLength(str) {
+  //split the string and turn into an array
+  let words = str.split(' ');
+  
+  //use reduce to run the Math.max() function through every value of the array 'words' (runs from left to right)
+  return words.reduce(function(longest, word){
+    //The 0 after the callback function, is used to give an initial value to the longest, so that Math.max will know where to start.
+    return Math.max(longest, word.length)
+  }, 0)
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
 
 //test should return 6
 console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
