@@ -6,7 +6,7 @@ Return an array consisting of the largest number from each provided sub-array. F
 Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
 */
 
-
+//METHOD 1
 const largestOfFour = arr => {
   let numA = [];
   let largest = 0;
@@ -29,6 +29,23 @@ const largestOfFour = arr => {
   // Loops are completed and the array is full. Now return the results to the console.
   return numA
 }
+
+/*--------------------------------------------------------------------------------------------*/
+
+//METHOD 2
+function largestOfFour(arr) {
+  //iterate through the 'arr' array
+  return arr.map(function(largeGroup){
+    //reduce the array by creating a function that will filter variables and find the largest number
+    return largeGroup.reduce(function(larger, smaller){
+      //if statement to find if 'larger' is bigger keep the value of 'larger' else return the value of 'smaller'
+        return larger > smaller ? larger : smaller
+    })
+  });
+}
+
+
+/*--------------------------------------------------------------------------------------------*/
 
 //test returns [5, 27, 39, 1001]
 console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
