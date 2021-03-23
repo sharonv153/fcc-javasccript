@@ -5,15 +5,16 @@ Check if a string (first argument, str) ends with the given target string (secon
 This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the 
 purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
 */
-function confirmEnding(str, target) {
-    let spltStr = str.split(''); //separate string into pieces
-    let ending = spltStr[spltStr.length - target.length] //gather the last items in the list
-    let together = ending.join('') //join the array back together
 
-    if (ending == target){
-        return 'True'
-    } else {
-        return 'False'
-    }
-   
+function confirmEnding(str, target) {
+    // split the string and extract the last items based of the length of 'target'
+  let splitStr = str.slice(-target.length);
+    // check if the extracted letters from 'str' are equal to the contents of 'target'
+  return splitStr === target ? true : false;
 }
+
+//returns True
+console.log(confirmEnding("Bastian", "n"));
+
+//returns False
+console.log(confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain"))
