@@ -7,11 +7,10 @@ this challenge, do not use the built-in .repeat() method.
 function repeatStringNumTimes(str, num) {
   // start a variable with an empty array
   let repeat = [];
-  let i = 0;
 
   /* use a while loop that runs until variable i reaches the value of num,
   every time the loop runs add the value of str into the repeat array */
-  while (i < num){
+  while (0 < num){
     repeat.push(str);
     i++;
   }
