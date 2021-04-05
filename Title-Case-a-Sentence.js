@@ -21,5 +21,28 @@ function titleCase(str) {
   return joinStr;
 }
 
+//TESTING CODE
+
 console.log(titleCase("I'm a little tea pot"));
+//return I'm A Little Tea Pot
 console.log(titleCase("sHoRt AnD sToUt"))
+// return Short And Stout
+
+
+//---------------------------------------------------------------------------
+
+//SHORTER SOLUTION:
+
+function titleCase(str) {
+  // lower case everything and then use regex to find A-Z & a-z that are at the begining to then replace with the function of L
+  return str.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())
+  }
+
+
+//TEST THE CODE
+
+console.log(titleCase("I'm a little tea pot"));
+//return I'm A Little Tea Pot
+console.log(titleCase("sHoRt AnD sToUt"))
+// return Short And Stout
+
