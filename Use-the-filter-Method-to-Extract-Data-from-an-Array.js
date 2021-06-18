@@ -146,11 +146,11 @@ var filteredList = trList.filter(
 
 var filteredList = watchList.map(
 	movieTR => ({
-		"title": movieTR["Title"],
-		"rating": movieTR["imdbRating"]
+		"title": movieTR.Title,
+		"rating": movieTR.imdbRating
 		})
-	).filter( movie => {
-    parseFloat(movie["rating"] >= 8.0; 
+	).filter(movie => {
+    return parseFloat(movie.rating) >= 8.0; 
     }
   );
 
