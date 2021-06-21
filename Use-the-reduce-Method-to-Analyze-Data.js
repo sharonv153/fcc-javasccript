@@ -133,8 +133,7 @@ function getRating(watchList){
     //use map() to select the rating property and transform from string to numeric
     .map(movie => Number(movie.imdbRating))
     //use the reduce() method to execute the calculations and then divide by the number of films using the filter() method with the .length property
-    .reduce(
-      (avgRate, rateNolan) => avgRate + rateNolan) / watchList.filter(movie => movie.Director === 'Christopher Nolan').length;
+    .reduce((avgRate, rateNolan) => avgRate + rateNolan) / watchList.filter(movie => movie.Director === 'Christopher Nolan').length;
 
   // return the result of the whole calculation made above by returning the value of averageRating
   return averageRating;
