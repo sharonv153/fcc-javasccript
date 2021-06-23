@@ -11,11 +11,7 @@ between 1 and 4 (both inclusive) is 10.
 function sumAll(arr) {
 
 //first, sort the array given
-  arr.sort(
-    function (x, y) {
-      return x === y? 0 : x < y? -1 : 1;
-    }
-  );
+arr = arr.sort((x, y) => x - y);
 
    //create a new global variable to store the numbers in an array
   let numArr = [];
