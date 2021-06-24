@@ -30,3 +30,21 @@ function diffArray(arr1, arr2) {
 //--------------------------------------------------
 
 //METHOD 2
+function diffArray(arr1, arr2) {
+
+  //create a variable that combines both arrays
+  let together = arr1.concat(arr2);
+
+  var newArr = [];
+
+  //use the filter() method to iterate and extract everything in together that's not in arr1 and arr2
+  return together.filter(
+    item => !arr1.includes(item) || !arr2.includes(item)
+    );
+}
+
+//---------------------------------------------------
+
+//TEST
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+//return [4]
